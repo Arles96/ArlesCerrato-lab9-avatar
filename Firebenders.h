@@ -10,6 +10,8 @@ class Firebenders : public Bender
 public:
   Firebenders();
   Firebenders(string);
+  ~Firebenders();
+  virtual void AtaqueRegular(Bender*);
   virtual void AtaqueEspecial(Bender*);
 };
 

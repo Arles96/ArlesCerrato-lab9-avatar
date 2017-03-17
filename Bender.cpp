@@ -64,24 +64,3 @@ int Bender::getSuerte()
 {
   return suerte;
 }
-
-void Bender::AtaqueRegular(Bender* bender)
-{
-  int temp = fuerza;
-  if (bender->getDefensa()>0) {
-    bender->setHp(bender->getHp() - ofensa/2);
-
-  }else {
-    bender->setHp(bender->getHp()-ofensa);
-  }
-}
-
-void Bender::AtaqueEspecial(Bender* bender)
-{
-  int ataque = ofensa + (ofensa*.025);
-  if (fuerza<=0) {
-    cout << "No se puede hacer el ataque especial" << endl;
-  }else {
-    bender->setHp(bender->getHp()-ataque);
-  }
-}

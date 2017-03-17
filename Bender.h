@@ -32,8 +32,8 @@ public:
   int getOfensa();
   int getFuerza();
   int getSuerte();
-  void AtaqueRegular(Bender*);
-  virtual void AtaqueEspecial(Bender*);
+  virtual void AtaqueRegular(Bender*)=0;
+  virtual void AtaqueEspecial(Bender*)=0;
 };
 
 #endif
