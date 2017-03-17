@@ -22,9 +22,9 @@ int main()
     cout << "2. Jugar" << endl << endl;
     cout << "Ingrese una opcion: ";
     cin>>opcion;
-    while (opcion!="1" || opcion!="2"){
+    while (opcion!="1" && opcion!="2"){
       cout << "Error en la opcion" << endl;
-      cout << "Ingrese ua opcion: ";
+      cout << "Ingrese una opcion: ";
       cin>>opcion;
     }
     if (opcion=="1"){
@@ -36,7 +36,7 @@ int main()
       cout << "4.- Waterbenders" << endl << endl;
       cout << "INgrese ua opcion: ";
       cin>>agregar;
-      while (agregar!="1" || agregar!="2" || agregar!="3" || agregar!="4") {
+      while (agregar!="1" && agregar!="2" && agregar!="3" && agregar!="4") {
         cout << "Error en la opcion" << endl;
         cout << "Ingrese una opcion";
         cin>>agregar;
@@ -105,7 +105,7 @@ int main()
           cout << "2.- Ataque especial" << endl << endl;
           cout << "Ingrese una opcion: ";
           cin>>j1;
-          while (j1!="1" || j1!="2"){
+          while (j1!="1" && j1!="2"){
             cout << "Error en la opcion " << endl;
             cout << "Ingrese una opcion: ";
             cin>>j1;
@@ -123,7 +123,7 @@ int main()
           cout << "2.- Ataque especial" << endl << endl;
           cout << "Ingrese una opcion: ";
           cin>>j2;
-          while (j2!="1" || j2!="2") {
+          while (j2!="1" && j2!="2") {
             cout << "Error en la opcion" << endl;
             cout << "Ingrese una opcion: ";
             cin>>j2;
@@ -136,12 +136,12 @@ int main()
           }
         }
         if (guerreros[p1]->getHp()<=0) {
-          cout << "El ganador es el guerrero " << guerreros[p2] << endl;
+          cout << "El ganador es el guerrero " << guerreros[p2]->getNombre() << endl;
           guerreros.erase(guerreros.begin() + p1);
           break;
         }
         if (guerreros[p2]->getHp()<=0) {
-          cout << "El ganador es el guerrero " << guerreros[p1] << endl;
+          cout << "El ganador es el guerrero " << guerreros[p1]->getNombre() << endl;
           guerreros.erase(guerreros.begin() + p2);
           break;
         }
