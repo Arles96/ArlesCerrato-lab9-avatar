@@ -77,7 +77,43 @@ int main()
       }
     }//fin agregar
     else {
-
+      for(int = 0; i < guerreros.size(); i++){
+        cout << i "   " << guerreros[i]->getNombre() << " " typeid(*guerreros[i]).name() << endl;
+      }
+      int p1=0;
+      int p2=0;
+      cout << "Ingrese una posicion para el guerrero 1: ";
+      cin>>p1;
+      cout << "Ingrese una posicion para el guerrero 2: ";
+      cin>>p2;
+      int c = 0;//contador
+      while (true) {
+        if (c%2==0) {
+          string j1;
+          cout << "MENU DE JUGADOR 1" << endl << endl;
+          cout << "1.- Ataque regular" << endl;
+          cout << "2.- Ataque especial" << endl << endl;
+          cout << "Ingrese una opcion: ";
+          cin>>j1;
+          while (j1!="1" || j1!="2"){
+            cout << "Error en la opcion " << endl;
+            cout << "Ingrese una opcion: ";
+            cin>>j1;
+          }
+          if (j1=="1") {
+            guerreros[p1]->AtaqueRegular(guerreros[p2]);
+          }else {
+            guerreros[p2]->AtaqueEspecial(guerreros[p2]);
+          }
+        }else {
+          string j2;
+          cout << "MENU JUGADOR 2" << endl << endl;
+          cout << "1.- Ataque regular" << endl;
+          cout << "2.- Ataque especial" << endl << endl;
+          cout << "Ingrese una opcion: ";
+        }
+        c++;
+      }
     }
     cout << endl;
     cout << "Desea continuar: ";
