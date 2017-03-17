@@ -105,16 +105,39 @@ int main()
           }else {
             guerreros[p2]->AtaqueEspecial(guerreros[p2]);
           }
-        }else {
+        }
+        else {
           string j2;
           cout << "MENU JUGADOR 2" << endl << endl;
           cout << "1.- Ataque regular" << endl;
           cout << "2.- Ataque especial" << endl << endl;
           cout << "Ingrese una opcion: ";
+          cin>>j2;
+          while (j2!="1" || j2!="2") {
+            cout << "Error en la opcion" << endl;
+            cout << "Ingrese una opcion: ";
+            cin>>j2;
+          }
+          if (j2=="1") {
+            guerreros[p2]->AtaqueRegular(guerreros[p1]);
+          }
+          else {
+            guerreros[p2]->AtaqueEspecial(guerreros[p1]);
+          }
+        }
+        if (guerreros[p1]->getHp()<=0) {
+          cout << "El ganador es el guerrero " << guerreros[p2] << endl;
+          guerreros.erase(guerreros.begin() + p1);
+          break;
+        }
+        if (guerreros[p2]->getHp()<=0) {
+          cout << "El ganador es el guerrero " << guerreros[p1] << endl;
+          guerreros.erase(guerreros.begin() + p2);
+          break;
         }
         c++;
-      }
-    }
+      }//fin de la simulacion
+    }//fin del juego
     cout << endl;
     cout << "Desea continuar: ";
     cin>>respuesta;
