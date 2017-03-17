@@ -1,4 +1,5 @@
 #include "Firebenders.h"
+#include "Waterbenders.h"
 
 Firebenders::Firebenders(){}
 
@@ -19,7 +20,7 @@ void Firebenders::AtaqueRegular(Bender* bender)
   srand(time(0));
   numero = rand()%1001;
   while (numero<1 || numero>1000) {
-    numero rand()%1001;
+    numero  =rand()%1001;
   }
   int ataque = ofensa;
   if (numero==50) {
@@ -40,7 +41,7 @@ void Firebenders::AtaqueEspecial(Bender* bender)
   srand(time(0));
   numero = rand()%1001;
   while (numero<1 || numero>1000) {
-    numero rand()%1001;
+    numero = rand()%1001;
   }
   int ataque=ofensa;
   if (numero==50) {

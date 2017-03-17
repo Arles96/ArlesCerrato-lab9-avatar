@@ -1,4 +1,5 @@
 #include "Waterbenders.h"
+#include "Earthbenders.h"
 
 Waterbenders::Waterbenders(){}
 
@@ -19,7 +20,7 @@ void Waterbenders::AtaqueRegular(Bender* bender)
   srand(time(0));
   numero = rand()%11;
   while (numero<1 || numero>10) {
-    numero rand()%11;
+    numero= rand()%11;
   }
   int ataque = ofensa;
   if (numero%3==0) {
@@ -39,15 +40,15 @@ void Waterbenders::AtaqueEspecial(Bender* bender)
   srand(time(0));
   numero = rand()%11;
   while (numero<1 || numero>10) {
-    numero rand()%11;
+    numero= rand()%11;
   }
   int ataque = ofensa;
   if (numero%3==0) {
     ataque = ofensa*1.5;
   }
-  if (typeid(*Bender)==typeid(Earthbenders)){
+  if (typeid(*bender)==typeid(Earthbenders)){
     ataque = ofensa*1.25;
-    if (bender->getDefensa<=0) {
+    if (bender->getDefensa()<=0) {
       bender->setHp(bender->getHp() - ataque);
     }else {
       bender->setHp(bender->getHp() - (ataque/2));
@@ -55,7 +56,7 @@ void Waterbenders::AtaqueEspecial(Bender* bender)
     }
   }
   else {
-    if (bender->getDefensa<=0) {
+    if (bender->getDefensa()<=0) {
       bender->setHp(bender->getHp() - ataque);
     }else {
       bender->setHp(bender->getHp() - (ataque/2));

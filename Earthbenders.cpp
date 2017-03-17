@@ -1,8 +1,9 @@
 #include "Earthbenders.h"
+#include "Airbenders.h"
 
 Earthbenders::Earthbenders(){}
 
-Earthbenders::Earthbenders(string pNombre) : public Bender(pNombre)
+Earthbenders::Earthbenders(string pNombre) : Bender(pNombre)
 {
   hp = 190;
   defensa = 100;
@@ -19,7 +20,7 @@ void Earthbenders::AtaqueRegular(Bender* bender)
   srand(time(0));
   numero = rand()%1001;
   while (numero<1 || numero>1000) {
-    numero rand()%1001;
+    numero = rand()%1001;
   }
   int ataque = ofensa;
   if (numero==50) {
@@ -40,7 +41,7 @@ void Earthbenders::AtaqueEspecial(Bender* bender)
   srand(time(0));
   numero = rand()%1001;
   while (numero<1 || numero>1000) {
-    numero rand()%1001;
+    numero=rand()%1001;
   }
   int ataque=ofensa;
   if (numero==50) {

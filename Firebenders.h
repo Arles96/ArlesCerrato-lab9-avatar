@@ -1,7 +1,7 @@
 #include "Bender.h"
 
-#ifndef BENDER_H_
-#define BENDER_H_
+#ifndef FIREBENDERS_H_
+#define FIREBENDERS_H_
 
 using namespace std;
 

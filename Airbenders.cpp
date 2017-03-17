@@ -1,5 +1,5 @@
 #include "Airbenders.h"
-
+#include "Firebenders.h"
 Airbenders::Airbenders()
 {
 
@@ -23,7 +23,7 @@ void Airbenders::AtaqueRegular(Bender* bender)
   srand(time(0));
   numero = rand()%101;
   while (numero<1 || numero>100) {
-    numero rand()%101;
+    numero = rand()%101;
   }
   int ataque = ofensa;
   if (numero%5==0) {
@@ -44,7 +44,7 @@ void Airbenders::AtaqueEspecial(Bender* bender)
   srand(time(0));
   numero = rand()%101;
   while (numero<1 || numero>100) {
-    numero rand()%101;
+    numero =  rand()%101;
   }
   int ataque = ofensa;
   if (numero%5==0) {
