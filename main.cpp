@@ -77,15 +77,25 @@ int main()
       }
     }//fin agregar
     else {
-      for(int = 0; i < guerreros.size(); i++){
-        cout << i "   " << guerreros[i]->getNombre() << " " typeid(*guerreros[i]).name() << endl;
+      for(int i= 0; i < guerreros.size(); i++){
+        cout << i <<"   " << guerreros[i]->getNombre() << " " <<  typeid(*guerreros[i]).name() << endl;
       }
       int p1=0;
       int p2=0;
       cout << "Ingrese una posicion para el guerrero 1: ";
       cin>>p1;
+      while (p1<0 || p1>guerreros.size()-1) {
+        cout << "Error en la posicion" << endl;
+        cout << "Ingrese una posicion para el guerrero 1: ";
+        cin>>p1;
+      }
       cout << "Ingrese una posicion para el guerrero 2: ";
       cin>>p2;
+      while (p2<0 || p2>guerreros.size()-1) {
+        cout << "Error en la posicion" << endl;
+        cout << "Ingrese una posicion para el guerrero 2: ";
+        cin>>p2;
+      }
       int c = 0;//contador
       while (true) {
         if (c%2==0) {
@@ -142,4 +152,14 @@ int main()
     cout << "Desea continuar: ";
     cin>>respuesta;
   }
+  removeMemory(guerreros);
+  return 0;
+}
+
+void removeMemory(vector<Bender*> g)
+{
+  for (int i = 0; i < g.size(); i++) {
+    delete g[i];
+  }
+  g.clear();
 }
